@@ -1,66 +1,45 @@
 # Product Hunt Viewer
 
-Product Hunt Viewer is a native Android app for discovering and exploring products launched on Product Hunt.
-
-The app connects to the Product Hunt GraphQL API and presents product launches in a clean, mobile-friendly feed. It is designed for people who want to browse new products, find launches by topic or platform, and quickly open the original Product Hunt page.
+A native Android app for discovering and filtering product launches published on Product Hunt.
 
 ## Features
 
-- Browse Product Hunt launches in a paginated feed.
-- Sort launches by ranking, newest, votes, or featured date.
-- Filter by platform: Android, iOS, Desktop, or Web.
-- Filter by Product Hunt topic.
-- Show only today's launches.
-- Filter featured or non-featured launches.
-- Search by date range, Product Hunt URL, or Twitter/X URL.
-- View launch thumbnails, taglines, topics, makers, vote counts, and comment counts.
-- Open the original Product Hunt page from any launch.
-- Store the Product Hunt developer token securely on the device.
-- Sign out and switch tokens at any time.
-
-## Screenshots
-
-Screenshots can be added here as the project evolves.
+- Browse launches in a paginated feed.
+- Sort by ranking, newest, vote count, or featured date.
+- Filter by Android, iOS, Desktop, or Web platform.
+- Filter by topic, featured status, date range, Product Hunt URL, or Twitter/X URL.
+- Quickly show launches posted today.
+- View launch thumbnails, taglines, topics, makers, votes, and comments.
+- Open a launch on Product Hunt.
+- Store and replace a Product Hunt developer token locally on the device.
 
 ## Requirements
 
 - Android 10 (API 29) or newer.
 - A valid Product Hunt developer token.
-- Android Studio with JDK 17 for building the project.
+- Android Studio and JDK 17 to build from source.
 
 ## Getting started
 
 1. Build and install the app on an Android device or emulator.
-2. On first launch, enter a Product Hunt developer token.
-3. Browse the latest launches or open the filter panel to refine the feed.
-4. Tap a launch to open its Product Hunt page.
+2. Enter your Product Hunt developer token when prompted.
+3. Browse launches or use the filter button to narrow the feed.
+4. Tap a launch to open it on Product Hunt.
 
-The token is validated before it is saved and is stored locally using Android's secure storage facilities. No token is included in this repository.
+The token is validated before being saved and is stored locally using Android secure-storage APIs. No developer token is included in this repository.
 
-## Building from source
+## Build from source
 
 ```bash
 ./gradlew assembleDebug
 ```
 
-The release APKs included in [`apk/release/`](apk/release/) are built for common Android architectures. For most devices, use [`app-universal-release.apk`](apk/release/app-universal-release.apk).
+Release APKs for common Android architectures are in [`apk/release/`](apk/release/). For most devices, use [`app-universal-release.apk`](apk/release/app-universal-release.apk). To sign your own release build, provide your own keystore and local `release.properties`; signing credentials are intentionally not included.
 
-To create your own signed release build, configure a local `release.properties` file and provide your own keystore. Signing files and passwords are intentionally excluded from version control.
+## Product Hunt API
 
-## Technology
-
-- Kotlin
-- Jetpack Compose
-- Material 3
-- AndroidX Security Crypto
-- OkHttp
-- Coil
-- Product Hunt GraphQL API v2
-
-## API access
-
-This application uses the [Product Hunt API](https://api.producthunt.com/v2/docs). You must provide your own developer token and comply with Product Hunt's terms and API policies.
+This app uses the [Product Hunt GraphQL API v2](https://api.producthunt.com/v2/docs). Users must provide their own developer token and follow Product Hunt’s API terms and policies.
 
 ## License
 
-No license has been selected yet. Until a license is added, all rights are reserved by the copyright holder.
+This project is licensed under the **GNU General Public License v3.0 only (GPL-3.0-only)**. See [`LICENSE`](LICENSE) for the complete license text.
