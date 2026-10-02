@@ -1,0 +1,5 @@
+Discover products launched on Product Hunt.
+
+Browse a paginated feed with launch details, makers, topics, votes, comments, and thumbnails. Sort launches by ranking, newest, votes, or featured date. Filter by platform, topic, featured status, date range, or URL.
+
+A Product Hunt developer token is required. Enter your own token in the app. It is validated and stored locally on your device.
