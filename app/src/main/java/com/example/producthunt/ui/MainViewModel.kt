@@ -127,7 +127,10 @@ class MainViewModel(
     }
 
     private fun fetchPage(afterCursor: String?, targetIndex: Int, generation: Int) {
-        if (isLoading) return
+        // Nao bloqueia por isLoading: um reset (troca de filtro) precisa disparar a
+        // propria busca mesmo com uma resposta antiga ainda em voo, senao a flag
+        // isLoading nunca volta pra false. A resposta antiga e descartada pelo
+        // guard de geracao logo abaixo.
         isLoading = true
         errorMessage = null
         viewModelScope.launch {
